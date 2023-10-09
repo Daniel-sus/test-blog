@@ -66,10 +66,6 @@ const Post = ({ post, isFullPost }) => {
     }
   };
 
-  console.log(post, "POST");
-
-  // console.log(comments, "COMMENTS");
-
   const handleCreateReply = async (info) => {
     const { reply, commentReplied } = info;
     try {
@@ -111,10 +107,6 @@ const Post = ({ post, isFullPost }) => {
 
     return acc;
   }, []);
-
-  // console.log("REPLIES", replies);
-  // console.log("FsilteredComments", filteredComments);
-  // console.log("Comments", comments);
 
   return (
     <div

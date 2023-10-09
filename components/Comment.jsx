@@ -13,7 +13,6 @@ const Comment = ({
   setLoadingReply,
   replies,
 }) => {
-  const [loading, setLoading] = React.useState(false);
   const [replyOpened, setReplyOpened] = React.useState(true);
   const [reply, setReply] = React.useState("");
   const isAuth = useSelector(selectIsAuth);
@@ -41,8 +40,6 @@ const Comment = ({
       commentReplied: comment,
     });
   };
-
-  console.log(replies, "replies");
 
   return (
     <div>

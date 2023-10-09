@@ -9,8 +9,6 @@ const Feed = () => {
   const [loading, setLoading] = React.useState(true);
   const [posts, setPosts] = React.useState([]);
 
-  // console.log("POSTS", posts);
-
   const getAllPosts = async () => {
     try {
       const { data } = await axios.get("/api/posts");

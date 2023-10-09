@@ -43,6 +43,5 @@ const Profile = ({ isProfileYours, userData, loading, posts }) => {
     </div>
   );
 };
-// };
 
 export default Profile;

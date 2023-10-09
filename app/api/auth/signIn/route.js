@@ -1,3 +1,4 @@
+import bcrypt from "bcrypt";
 import User from "@models/user";
 import { connectToDB } from "@utils/database";
 
@@ -6,10 +7,15 @@ export const POST = async (request) => {
 
   try {
     await connectToDB();
+
+    const saltRounds = 10;
+    const salt = bcrypt.genSaltSync(saltRounds);
+    const hash = bcrypt.hashSync(password, salt);
+
     const newUser = new User({
       nickname: nickname,
       email: email,
-      password: password,
+      password: hash,
     });
 
     await newUser.save();
